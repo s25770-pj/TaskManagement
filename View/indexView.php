@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="<?php $styleIndex ?>">
-    <title>Blog</title>
+    <title>TaskManagement</title>
 </head>
 <body>
     fgsdfgdgdfgsdgdfg
