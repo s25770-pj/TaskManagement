@@ -24,7 +24,7 @@
                 1 => 'Kategoria 2',
                 2 => 'Kategoria 3',
                 3 => 'Kategoria 4'
-            ]; // Zastąp tę tablicę rzeczywistymi danymi kategorii z bazy danych
+            ];
 
             foreach ($categories as $categoryId => $categoryName) {
                 echo "<option value='$categoryId'>$categoryName</option>";
@@ -41,14 +41,6 @@
         $price = $_POST['price'];
         $link = $_POST['link'];
         $categoryId = $_POST['category'];
-        
-        $propositionRepository = new propositionRepository($db);
-        
-        if ($propositionRepository->createPropose($itemName, $price, $link, $categoryId)) {
-            echo "Propozycja została utworzona.";
-        } else {
-            echo "Wystąpił błąd podczas tworzenia propozycji.";
-        }
     }
 ?>
 </body>
