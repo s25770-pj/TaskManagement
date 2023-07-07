@@ -11,4 +11,6 @@ if ($propositionRepository->createPropose($itemName, $price, $link, $categoryId)
         echo "Wystąpił błąd podczas tworzenia propozycji.";
     }
 
+    $propositionRepository->getCategories();
+    
 require_once $createProposeView;

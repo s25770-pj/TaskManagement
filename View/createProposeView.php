@@ -19,12 +19,6 @@
     <label for="category">Kategoria:</label>
     <select id="category" name="category">
         <?php
-            $categories = [
-                0 => 'Kategoria 1',
-                1 => 'Kategoria 2',
-                2 => 'Kategoria 3',
-                3 => 'Kategoria 4'
-            ];
 
             foreach ($categories as $categoryId => $categoryName) {
                 echo "<option value='$categoryId'>$categoryName</option>";

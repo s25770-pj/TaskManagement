@@ -73,7 +73,7 @@ class propositionRepository {
     }
 
     public function showMyPropositions($id) {
-        $query = "SELECT p.itemName, p.price, p.link, c.categoryName FROM propositions p JOIN category c ON p.categoryId = c.id WHERE p.userId = :id";
+        $query = "SELECT p.itemName, p.price, p.link, c.category FROM propositions p JOIN category c ON p.categoryId = c.id WHERE p.userId = :id";
         try {
             $statement = $this->db->getConnection()->prepare($query);
             $statement->bindValue(':id', $id);
@@ -87,5 +87,21 @@ class propositionRepository {
 
             return false;
         }
+    }
+
+    public function getCategories() {
+        $query = "SELECT category FROM category";
+
+        $statement = $this->db->getConnection()->prepare($query);
+        $statement->execute();
+
+        $categories = [];
+
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $categoryId = $row['id'];
+            $categoryName = $row['category'];
+            $categories[$categoryId] = $categoryName;
+        }
+        return $categories;
     }
 }
